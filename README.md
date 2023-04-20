@@ -1,6 +1,6 @@
 # HelloSpring
 
-#SQL
+# SQL
 Create table employee(
 e_id serial primary key,
 	nombre varchar(30),
