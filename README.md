@@ -1,5 +1,5 @@
 # HelloSpring
-
+Programa con las opciones de ver y añadir empleados
 # SQL
 Create table employee(
 e_id serial primary key,
