@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{plantilla/template::head}">
+  <meta charset="UTF-8">
+  <title>Inicio</title>
+
+</head>
+<body>
+<header th:replace="~{plantilla/template::header}"></header>
+<div class="container">
+  <h1 th:text="${titulo}"></h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="emp:${empleados}">
+      <th scope="row" th:text="${emp.e_id}"></th>
+      <td th:text="${emp.nombre}"></td>
+      <td th:text="${emp.edad}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<footer th:replace="~{plantilla/template::footer}"></footer>
+</body>
+</html>
