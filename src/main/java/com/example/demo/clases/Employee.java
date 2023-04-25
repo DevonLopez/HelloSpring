@@ -18,13 +18,13 @@ public final class Employee{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "e_id")
-    public Long e_id;
+    private Long e_id;
 
     @Column(name = "nombre")
-    public String nombre;
+    private String nombre;
 
     @Column(name = "edad")
-    public Long edad;
+    private Long edad;
 
 
 }
