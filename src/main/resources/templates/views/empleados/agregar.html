@@ -8,7 +8,9 @@
 <body>
 <header th:replace="~{plantilla/template::header}"></header>
 <div class="container">
- <p>Usuario Agregado</p>
+    <h2>Confirmación de datos del empleado</h2>
+   <p>Nombre: <span th:text="${formulario.build().nombre}"></span></p>
+    <p>Edad: <span th:text="${formulario.build().edad}"></span></p>
 </div>
 <footer th:replace="~{plantilla/template::footer}"></footer>
 </body>

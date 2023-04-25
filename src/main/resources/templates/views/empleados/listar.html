@@ -18,8 +18,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="emp:${empleados}">
-      <th scope="row" th:text="${emp.e_id}"></th>
+    <tr th:each="emp : ${empleados}">
+      <th scope="row" ><a th:href="@{'/views/empleados/' + ${emp.e_id}}" th:text="${emp.e_id}"></a></th>
       <td th:text="${emp.nombre}"></td>
       <td th:text="${emp.edad}"></td>
     </tr>

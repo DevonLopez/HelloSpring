@@ -8,11 +8,11 @@
 <body>
 <header th:replace="~{plantilla/template::header}" ></header>
 <div class="container">
-  <form th:action="@{/views/empleados/add/user}" action="#" method="post" th:object="${formulario}">
+  <form th:action="@{/views/empleados/add/user}" method="post" th:object="${formulario}">
     <label>Nombre</label>
-    <input name="nombre" type="text" maxlength="30" th:required="required" th:field="*{nombre}">
+    <input name="nombre" type="text" maxlength="30" th:field="*{nombre}">
     <label>Edad</label>
-    <input name="edad" type="number" th:required="required" th:field="*{edad}">
+    <input name="edad" type="number"  th:field="*{edad}">
 
     <br>
     <input type="submit">

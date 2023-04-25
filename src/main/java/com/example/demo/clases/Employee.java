@@ -2,49 +2,29 @@ package com.example.demo.clases;
 
 
 import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.Immutable;
 
 import java.io.Serializable;
 
 @Entity
 @Table(name="employee")
-public class Employee implements Serializable {
+@Getter
+@NoArgsConstructor
+@Builder(setterPrefix = "set", toBuilder = true)
+@AllArgsConstructor
+public final class Employee{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long e_id;
-    private String nombre;
-    private int edad;
+    @Column(name = "e_id")
+    public Long e_id;
 
-    public long getE_id() {
-        return e_id;
-    }
+    @Column(name = "nombre")
+    public String nombre;
 
-    public void setE_id(long e_id) {
-        this.e_id = e_id;
-    }
+    @Column(name = "edad")
+    public Long edad;
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "e_id=" + e_id +
-                ", nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                '}';
-    }
 }

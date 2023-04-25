@@ -1,29 +1,28 @@
-package com.example.demo.clases;
+package com.example.demo.services;
 
 import com.example.demo.clases.Employee;
-import com.example.demo.interfaces.EmployeeInteface;
 import com.example.demo.interfaces.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeInteface {
+public class EmployeeServiceImpl {
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
-    @Override
+    private final EmployeeRepository employeeRepository;
+
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
+
     public List<Employee> listarTodos() {
         return (List<Employee>) employeeRepository.findAll();
     }
 
-    @Override
-    public void guardar(Employee emleado) {
-        employeeRepository.save(emleado);
+    public void guardar(Employee empleado) {
+        employeeRepository.save(empleado);
     }
 
-    @Override
     public Employee buscarPorId(long id) {
         return employeeRepository.findById(id).orElse(null);
     }
