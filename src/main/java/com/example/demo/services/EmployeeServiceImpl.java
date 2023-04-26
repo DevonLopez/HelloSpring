@@ -16,7 +16,7 @@ public class EmployeeServiceImpl {
     }
 
     public List<Employee> listarTodos() {
-        return (List<Employee>) employeeRepository.findAll();
+        return employeeRepository.findAll();
     }
 
     public void guardar(Employee empleado) {
