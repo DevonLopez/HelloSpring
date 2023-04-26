@@ -59,4 +59,14 @@ class EmployeeControllerTest {
         verify(employeeService, times(1)).guardar(any());
         verify(model, times(1)).addAttribute(any(),any());
     }
+
+    @Test
+    @DisplayName("Controlador usuario por id")
+    void verEmpleado() {
+        String view = employeeController.verEmpleado(model, 1L);
+        assertEquals("/views/empleados/listar", view);
+        verify(model, times(2)).addAttribute(any(), any());
+        verify(employeeService, times(1)).buscarPorId(1L);
+    }
+
 }

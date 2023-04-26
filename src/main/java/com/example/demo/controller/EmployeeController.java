@@ -32,7 +32,7 @@ class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    private String verEmpleado(Model model, @PathVariable long id) {
+    public String verEmpleado(Model model, @PathVariable long id) {
         if (employeeIntefaceImpl == null)
         {
             model.addAttribute("titulo", "Empleado " + id);
