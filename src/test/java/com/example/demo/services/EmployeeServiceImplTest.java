@@ -52,6 +52,15 @@ class EmployeeServiceImplTest {
     }
 
     @Test
+    @DisplayName("Guardar empleado y comprobar que recibe el elemento")
+    void guardarEmpleado() {
+        Employee employee = Employee.builder().setE_id(96L).setNombre("Camilo").setEdad(15L).build();
+        employeeService.guardar(employee);
+        verify(employeeRepository, times(1)).save(employee);
+        verify(employeeRepository).save(argThat(argument -> argument.equals(employee)));
+    }
+
+    @Test
     @DisplayName("Guardar empleado ejemplo all parametros")
     void guardarEmpleadoTodosParametros() {
         Employee employee = Employee.builder()
